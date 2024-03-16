@@ -1,4 +1,4 @@
-name: Build-station-m3
+name: Build-cyber-aib
 on:
   workflow_dispatch:
 
