@@ -13,7 +13,7 @@ IMAGE_PARTITION_TABLE="gpt"
 
 # Override family config for this board; let's avoid conditionals in family config.
 function post_family_config__cyberaib_use_vendor_uboot() {
-	BOOTCONFIG="rk3588_defconfig"
+	BOOTCONFIG="rk3588-cyber-aib_defconfig"
 	BOOTSOURCE='https://github.com/chainsx/cyber-aib-uboot'
 	BOOTBRANCH='branch:rk3588'
 	BOOTDIR="u-boot-${BOARD}"
