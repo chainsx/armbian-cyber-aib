@@ -1,4 +1,4 @@
-name: Build-cyber-aib
+name: Build-cyber-aib-vendor
 on:
   workflow_dispatch:
 
