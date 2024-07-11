@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Get time
         id: time
         uses: nanzm/get-time-action@v1.1
@@ -35,7 +35,7 @@ jobs:
         BRANCH: [legacy]
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Upload Armbian image
         uses: chainsx/armbian-compile-action@cyber-clil
         if: matrix.DISTRO == 'armbian'
