@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v2
       - name: Get time
         id: time
-        uses: nanzm/get-time-action@v1.1
+        uses: nanzm/get-time-action@v2.0
         with:
           format: 'YYYYMMDD-HHmm'
       - name: Create empty release
