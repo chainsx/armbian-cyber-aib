@@ -39,7 +39,7 @@ function do_main_configuration() {
 	fi
 
 	# Armbian image is set as unofficial if build manually or without declaring from outside
-	[[ -z $VENDOR ]] && VENDOR="Armbian-unofficial"
+	[[ -z $VENDOR ]] && VENDOR="Armbian-cyber-aib"
 
 	# Use framework defaults for community Armbian images and unsupported distribution when building Armbian distribution
 	if [[ ${VENDOR} == "Armbian" ]] && [[ ${BOARD_TYPE} != "conf" || $(cat $SRC/config/distributions/$RELEASE/support) != "supported" ]]; then
