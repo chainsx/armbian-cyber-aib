@@ -19,22 +19,22 @@ ATF_TARGET_MAP="PLAT=${ATF_PLAT} IMX_BOOT_UART_BASE=${ATF_UART_BASE} bl31;;build
 UBOOT_TARGET_MAP="flash.bin;;flash.bin"
 
 # linux releated
-case $BOARD in
 
-	mba8mpxl*)
-		LINUXCONFIG='linux-tqma-'$BRANCH # one config for "tq arm modules"
-		case $BRANCH in
+LINUXCONFIG="linux-imx8m-${BRANCH}"
 
-			current) # active lts mainline kernel
-				KERNEL_MAJOR_MINOR="6.6"
-				KERNELBRANCH='branch:linux-6.6.y'
-				KERNELPATCHDIR="archive/imx8m-6.6"
-				;;
+case $BRANCH in
+	legacy)
+		KERNELSOURCE='https://github.com/Avnet/linux-imx.git'
+		KERNELBRANCH="branch:maaxboard_lf-6.1.22-2.0.0"
+		declare -g KERNEL_MAJOR_MINOR="6.1"
+		KERNELPATCHDIR="imx8m-${BRANCH}"
+	;;
+	current) # active lts mainline kernel
+		KERNEL_MAJOR_MINOR="6.6"
+		KERNELBRANCH='branch:linux-6.6.y'
+		KERNELPATCHDIR="archive/imx8m-6.6"
+	;;
 
-			edge | default) # use for tests with recent mainline kernels
-				;;
-
-		esac
-		;;
-
+	edge | default) # use for tests with recent mainline kernels
+	;;
 esac
