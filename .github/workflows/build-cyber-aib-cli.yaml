@@ -32,7 +32,7 @@ jobs:
         BOARD: [cyber-aib]
         DISTRO: [armbian]
         FLAVOR: [ubuntu]
-        BRANCH: [legacy]
+        BRANCH: [vendor]
     steps:
       - name: Checkout
         uses: actions/checkout@v2
