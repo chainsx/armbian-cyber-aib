@@ -37,7 +37,9 @@ jobs:
       - name: Check Pre Sources
         shell: bash
         run: |
-          echo $(pwd)
+          DEL_PATH=$(pwd)
+          cd .. && rm -rf ${DEL_PATH}
+          mkdir ${DEL_PATH} && cd ${DEL_PATH}
       - name: Checkout
         uses: actions/checkout@v2
       - name: Upload Armbian image
