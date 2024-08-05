@@ -25,7 +25,7 @@ jobs:
     outputs:
       release_id: ${{ steps.release.outputs.id }}
   build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: prepare_release
     strategy:
       matrix:
@@ -34,6 +34,10 @@ jobs:
         FLAVOR: [ubuntu]
         BRANCH: [vendor]
     steps:
+      - name: Check Pre Sources
+        shell: bash
+        run: |
+          echo $(pwd)
       - name: Checkout
         uses: actions/checkout@v2
       - name: Upload Armbian image
